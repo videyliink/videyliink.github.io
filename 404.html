@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videy - Streaming Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @keyframes pulse-simple {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .play-animation {
+      animation: pulse-simple 1.5s infinite ease-in-out;
+    }
+    body { background-color: #000; }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen m-0 p-4 font-sans text-white">
+
+  <a href="https://topxvidey.blogspot.com/" 
+     id="mainLink"
+     target="_blank" 
+     class="w-full max-w-2xl">
+    
+    <div class="relative bg-zinc-900 aspect-video rounded-xl border border-zinc-800 flex flex-col items-center justify-center overflow-hidden shadow-2xl">
+      
+      <!-- Tombol Play -->
+      <div class="play-animation w-20 h-20 bg-white text-black rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+        <i class="fas fa-play text-3xl ml-1"></i>
+      </div>
+
+      <!-- Teks Minimalis -->
+      <div class="mt-6 text-center">
+        <h2 class="text-xl font-medium tracking-tight text-zinc-200">Video siap diputar</h2>
+        <p id="filename" class="text-zinc-500 text-sm mt-1">Memuat video...</p>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-800">
+        <div class="h-full bg-red-600 w-1/3"></div>
+      </div>
+
+    </div>
+
+    <p class="text-center mt-4 text-zinc-600 text-[11px] flex items-center justify-center gap-2 uppercase tracking-widest">
+      <i class="fas fa-shield-alt"></i> Secure Connection
+    </p>
+  </a>
+
+  <script>
+    const targetURL = "https://www.profitablecpmratenetwork.com/wnxknvs8?key=e775d852a71319db380baedbc3cf1555";
+    const mainLink = document.getElementById('mainLink');
+    const filenameText = document.getElementById('filename');
+    const path = window.location.pathname;
+    const cleanName = path.split('/').pop();
+    if (cleanName && cleanName.includes('.')) {
+        filenameText.innerText = "Nonton: " + cleanName;
+    } else {
+        filenameText.innerText = "Klik untuk melanjutkan";
+    }
+    mainLink.addEventListener('click', function(e) {
+      setTimeout(function() {
+        window.location.href = targetURL;
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
